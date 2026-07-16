@@ -122,7 +122,7 @@ const config = {
       algolia: {
         appId: "NWCBH5GSLJ",
         apiKey: "a36b06548f2cb9185956ca339ad18aeb",
-        indexName: "info-cegepmontpetit",
+        indexName: "3M5",
         contextualSearch: true,
         searchPagePath: "search",
       },
