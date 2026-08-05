@@ -25,13 +25,13 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "3.1 - Librairie standard 📘",
+      label: "3.1 - Librairies standard et tierces 📘",
       id: "cours/3.1-std-lib",
     },
     {
       type: "doc",
-      label: "3.2 - Librairies tierces 📖",
-      id: "cours/3.2-librairies-tierces",
+      label: "3.2 - Tests 🧪",
+      id: "cours/3.2-tests",
     },
     {
       type: "doc",
