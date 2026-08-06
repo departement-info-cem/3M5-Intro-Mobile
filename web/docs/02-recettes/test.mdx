@@ -1,0 +1,95 @@
+---
+hide_table_of_contents: true
+---
+
+# Tests Unitaires
+
+Les tests unitaires sont un élément critique et important du développement logiciel. Chaque fonction doit faire l'objet de tests couvrant l'ensemble des scénarios d'utilisation possible. 
+
+Malgré que tout ceci parait lourd, il est important d'y penser en amont. Vos fonctions feront parties de bibliothèques logiciels et seront réutilisées dans des contextes différents de celui pour lequel pour les avez initialement conçues.
+
+## Exemple simple
+
+### La fonction division
+
+Vous créer une fonction permettant de faire une division entre nombre entier. Voici sa définition en kotlin : 
+
+```kotlin
+fun division(a: Int, b: Int): Int? { // Notez le type de retour Int? : on autorise un retour null
+    if (b == 0) {
+        return null // Une division par zéro fait planter le programme
+    }
+    return a / b
+}
+```
+
+L'idée de définir cette fonction est de faire une version sécurisée de la division en évitant les plantages en cas de division par zéro. 
+Vos tests vont devoir alors envisager tous les scénarios possibles qui sont les suivants : 
+* a est divisible par b (par exemple, 10 est divisible par 5)
+* a n'est pas divisible par b, ce qui provoque un résultat tronqué (par exemple, 10 divisé par 6 retourne 1)
+* b est nul
+
+### Étapes d'un test unitaires
+
+En général, un test unitaire se décompose en trois parties suivant le modèle __AAA__ :
+* __Arrange (Arranger)__ : Préparer les données nécessaires au test
+* __Act (Agir)__ : On exécute le code à tester
+* __Assert (Auditer)__ : On s'assure que le résultat est conforme à celui qui était attendu
+
+### Classe de test pour notre fonction division
+
+La classe des tests à définir est la suivante : 
+```kotlin
+// CalculatriceTest.kt
+
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNull
+
+class CalculatriceTest {
+
+    @Test
+    fun divisionNormaleRetourneLeQuotient() {
+        // Arrange
+        val a = 10
+        val b = 2
+        val resultatAttendu = 5
+
+        // Act
+        val resultat = division(a, b)
+
+        // Assert
+        assertEquals(resultatAttendu, resultat)
+    }
+
+    @Test
+    fun divisionParZeroRetourneNull() {
+        // Arrange
+        val a = 10
+        val b = 0
+
+        // Act
+        val resultat = division(a, b)
+
+        // Assert
+        assertNull(resultat)
+    }
+
+    @Test
+    fun divisionEntiereTronqueLeResultat() {
+        // Arrange
+        val a = 7
+        val b = 2
+        val resultatAttendu = 3
+
+        // Act
+        val resultat = division(a, b)
+
+        // Assert
+        assertEquals(resultatAttendu, resultat)
+    }
+}
+```
+## Plan de test
+
+Voici un exemple d'un plan de test que vous devrez inclure dans vos projet [ici](./plandetest.mdx).

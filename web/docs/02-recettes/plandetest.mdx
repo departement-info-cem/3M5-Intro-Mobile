@@ -1,0 +1,41 @@
+---
+hide_table_of_contents: true
+---
+
+# Plan de test — Calculatrice
+
+## Objectif
+
+Ce document présente le plan de test des fonctions `addition` et `division` du module `Calculatrice`. Pour chaque fonction, les cas normaux, limites et invalides sont identifiés avant l'écriture du code de test.
+
+---
+
+## Fonction : `addition(a: Int, b: Int): Int`
+
+**Description :** Retourne la somme de deux entiers.
+
+**Entrées attendues :** deux entiers (`a`, `b`)
+**Sortie attendue :** un entier correspondant à `a + b`
+
+| # | Description du cas | Entrée(s) | Résultat attendu |
+|---|---|---|---|
+| 1 | Addition de deux nombres positifs | a=2, b=3 | 5 |
+| 2 | Addition avec un nombre négatif | a=-1, b=1 | 0 |
+| 3 | Addition de deux zéros (cas limite) | a=0, b=0 | 0 |
+| 4 | Addition de deux nombres négatifs | a=-4, b=-6 | -10 |
+
+---
+
+## Fonction : `division(a: Int, b: Int): Int?`
+
+**Description :** Retourne le quotient entier de `a` par `b`, ou `null` si `b` vaut 0.
+
+**Entrées attendues :** deux entiers (`a`, `b`)
+**Sortie attendue :** un entier (division entière tronquée) ou `null`
+
+| # | Description du cas | Entrée(s) | Résultat attendu |
+|---|---|---|---|
+| 1 | Division normale | a=10, b=2 | 5 |
+| 2 | Division entière tronquée (cas limite) | a=7, b=2 | 3 |
+| 3 | Division par zéro (cas invalide) | a=10, b=0 | null |
+
