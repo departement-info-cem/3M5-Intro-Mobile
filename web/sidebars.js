@@ -20,13 +20,13 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "2.2 - Impératif ✊",
-      id: "cours/2.1-imperatif",
+      label: "2.2 - Librairie Standard ✊",
+      id: "cours/2.2-std-lib",
     },
     {
       type: "doc",
-      label: "3.1 - Librairies standard et tierces 📘",
-      id: "cours/3.1-std-lib",
+      label: "3.1 - Librairies tierces 📘",
+      id: "cours/3.1-lib-tierce",
     },
     {
       type: "doc",
