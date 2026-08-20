@@ -30,8 +30,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "3.2 - Tests 🧪",
-      id: "cours/3.2-tests",
+      label: "3.2 - Exceptions ⚠️",
+      id: "cours/10.1-pile-appels-exceptions",
     },
     {
       type: "doc",
@@ -40,35 +40,36 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "4.2 - Intégration 🔨",
+      label: "4.2 - Tests 🧪",
+      id: "cours/3.2-tests",
+    },
+    {
+      type: "doc",
+      label: "5.1 - Intégration 🔨",
       id: "cours/4.2-integration-1",
       className: "remise-tp1",
     },
     {
       type: "doc",
-      label: "5.1 - Formatif",
+      label: "5.2 - Examen théorique (5%) / Formatif pratique",
       id: "cours/5.1-formatif-intra",
+      className: "examen",
     },
     {
       type: "doc",
-      label: "5.2 - Examen Intra (30%)",
+      label: "6.1 - Examen pratique (15%)",
       id: "cours/5.2-examen-intra",
       className: "examen",
     },
     {
       type: "doc",
-      label: "6.1 - Intro Android 🤖",
+      label: "6.2 - Intro Android 🤖",
       id: "cours/6.1-intro-android",
     },
     {
       type: "doc",
-      label: "6.2 - Activités et Navigation 🧭",
+      label: "7.1 - Activités et Navigation 🧭",
       id: "cours/6.2-activites",
-    },
-    {
-      type: "doc",
-      label: "7.1 - Listes ☰",
-      id: "cours/7.1-listes",
     },
     {
       type: "doc",
@@ -87,19 +88,20 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9.1 - Graphique 📈",
+      label: "9.1 - État i18n",
+      id: "cours/13.2-etat-multilingue",
+    },
+    {
+      type: "doc",
+      label: "9.2 - Graphique 📈",
       id: "cours/9.1-graphique",
     },
     {
       type: "doc",
-      label: "9.2 - Intégration 🔨",
+      label: "10.1 - Examen théorique (5%) / Intégration 🔨",
       id: "cours/9.2-integration-2",
-      className: "remise-tp2",
-    },
-    {
-      type: "doc",
-      label: "10.1 - Exceptions ⚠️",
-      id: "cours/10.1-pile-appels-exceptions",
+      className: "examen remise-tp2",
+      
     },
     {
       type: "doc",
@@ -154,7 +156,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "15.2 - Examen Final (30%)",
+      label: "15.2 - Examen théorique (15%) / Examen pratique (20%)",
       id: "cours/15.2-examen-final",
       className: "examen",
     },

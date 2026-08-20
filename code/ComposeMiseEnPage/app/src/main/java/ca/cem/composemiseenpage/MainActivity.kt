@@ -48,9 +48,9 @@ class MainActivity : ComponentActivity() {
                     }
                 ) { innerPadding ->
                     // TODO décommenter une ligne, celle qu'on veut afficher
-                    mep_simple(modifier = Modifier.padding(innerPadding))
+                    //mep_simple(modifier = Modifier.padding(innerPadding))
                     //mep_complexe(modifier = Modifier.padding(innerPadding))
-                    //mep_brisée(modifier = Modifier.padding(innerPadding))
+                    mep_brisée(modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -194,7 +194,7 @@ fun mep_brisée(modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
     ){
-        Column(){
+        Column(Modifier.weight(1f)){
             Text("Les 2 problèmes, on ne voit pas la colonne de droite, et le texte trop petit ne s'affiche pas")
             Spacer(Modifier.weight(30f))
             Button(
@@ -225,7 +225,7 @@ fun mep_brisée(modifier: Modifier = Modifier) {
         ){
             Text(
                 "Yo on ne devrait jamais utiliser un poids pour la hauteur d'un élément avec du texte",
-                modifier = Modifier.weight(1f)
+                //modifier = Modifier.weight(1f)
             )
             Spacer(Modifier.weight(30f))
             Button(
