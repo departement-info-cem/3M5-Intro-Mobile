@@ -87,11 +87,11 @@ const config = {
             sidebarId: "tp",
             label: "Travaux Pratiques ✏️",
           },
-          {
-            label: "Installator",
-            href: `https://github.com/departement-info-cem/scripts-mobile/releases/download/Script/ScriptSharp.exe`,
-            position: "right",
-          },
+          //{
+          //  label: "Installator",
+          //  href: `https://github.com/departement-info-cem/scripts-mobile/releases/download/Script/ScriptSharp.exe`,
+          //  position: "right",
+          //},
         ],
       },
       footer: {
