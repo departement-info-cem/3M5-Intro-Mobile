@@ -2,46 +2,75 @@
 hide_table_of_contents: true
 ---
 
-# Tests Unitaires
+# Créer des tests unitaires dans IntelliJ
 
-Les tests unitaires sont un élément critique et important du développement logiciel. Chaque fonction doit faire l'objet de tests couvrant l'ensemble des scénarios d'utilisation possible. 
+Les tests unitaires sont un élément critique et essentiel du développement logiciel. Chaque fonction doit faire l'objet de tests couvrant l'ensemble des scénarios d'utilisation possibles. 
+Bien que ceci puisse paraître lourd, il est important d'y penser en amont. Vos fonctions feront partie de bibliothèques logicielles et seront réutilisées dans des contextes différents de celui pour lequel vous les avez initialement conçues.
 
-Malgré que tout ceci parait lourd, il est important d'y penser en amont. Vos fonctions feront parties de bibliothèques logiciels et seront réutilisées dans des contextes différents de celui pour lequel pour les avez initialement conçues.
+Dans un projet Kotlin, le code de production et le code de test sont séparés dans deux dossiers distincts :
 
-## Exemple simple
+```
+src/
+├── main/
+│   └── kotlin/
+│       └── Calculatrice.kt
+└── test/
+    └── kotlin/
+        └── CalculatriceTest.kt
+```
 
-### La fonction division
+* Le dossier `src/main/kotlin` contient le code de l’application, incluant les fonctions et les classes que vous développez.
 
-Vous créer une fonction permettant de faire une division entre nombre entier. Voici sa définition en kotlin : 
+* Le dossier `src/test/kotlin` contient **exclusivement** le code servant à tester l’application.
+
+## Exemple simple - fonction *division*
+
+### Étape 1 : Définir la fonction à tester
+
+À l'intérieur d'un fichier intitulé `Calculatrice.kt`, définissez une fonction permettant de faire une division entre deux nombres entiers. 
+Voici sa définition en Kotlin : 
 
 ```kotlin
 fun division(a: Int, b: Int): Int? { // Notez le type de retour Int? : on autorise un retour null
     if (b == 0) {
-        return null // Une division par zéro fait planter le programme
+        return null // Une division par zéro n'est pas autorisée
     }
     return a / b
 }
 ```
 
-L'idée de définir cette fonction est de faire une version sécurisée de la division en évitant les plantages en cas de division par zéro. 
-Vos tests vont devoir alors envisager tous les scénarios possibles qui sont les suivants : 
-* a est divisible par b (par exemple, 10 est divisible par 5)
-* a n'est pas divisible par b, ce qui provoque un résultat tronqué (par exemple, 10 divisé par 6 retourne 1)
-* b est nul
+L’objectif de cette fonction est d’offrir une version sécurisée de la division entière. 
+Elle évite une erreur d’exécution lorsque le diviseur vaut zéro en retournant `null` plutôt que de laisser le programme planter.
 
-### Étapes d'un test unitaires
+Les tests unitaires de cette fonction devront couvrir les principaux scénarios suivants :
+* `a` est divisible par `b` : le quotient est exact, par exemple division(10, 5) retourne 2.
+* `a` n’est pas divisible par `b` : puisque la fonction effectue une division entière, la partie décimale est retirée. Par exemple, division(10, 6) retourne 1.
+* `b` vaut 0 : la fonction doit retourner ``null`` afin d’indiquer qu’une division par zéro ne peut pas être effectuée.
 
-En général, un test unitaire se décompose en trois parties suivant le modèle __AAA__ :
-* __Arrange (Arranger)__ : Préparer les données nécessaires au test
-* __Act (Agir)__ : On exécute le code à tester
-* __Assert (Auditer)__ : On s'assure que le résultat est conforme à celui qui était attendu
+### Étape 2 : Créer la classe de tests
 
-### Classe de test pour notre fonction division
+Dans `src/test/kotlin`, ajoutez un nouveau fichier Kotlin en respectant la nomenclature ``[NomDeLaClasse]Test``.
+Dans cet exemple, créez le fichier `CalculatriceTest.kt`. Il contiendra la classe `CalculatriceTest`.
 
-La classe des tests à définir est la suivante : 
+
+### Étape 3 : Définir les tests unitaires
+
+Chaque scénario d’utilisation important doit être représenté par une fonction de test distincte.
+
+Chaque test doit :
+
+1. Porter un nom descriptif qui indique le comportement vérifié.
+2. Être précédé de l’annotation ``@Test``. Cette annotation indique à JUnit que la fonction est un test unitaire à exécuter.
+3. Respecter, autant que possible, le modèle __AAA__ :
+* __Arrange (Arranger)__ : Préparer les données dont nous avons besoin pour exécuter le test.
+* __Act (Agir)__ : On exécute la méthode à tester
+* __Assert (Auditer)__ : On s'assure que le résultat est conforme à celui qui était attendu.
+4. Vérifier **un seul** comportement précis.
+
+Votre classe de tests devrait donc ressembler à ceci : 
 ```kotlin
 // CalculatriceTest.kt
-
+import org.gagneleroux.division // Adaptez cet import au paquetage de votre projet.
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNull
@@ -90,6 +119,23 @@ class CalculatriceTest {
     }
 }
 ```
+
+### Étape 4 : Exécuter les tests
+
+Pour exécuter un test dans IntelliJ :
+
+* Cliquez sur l’icône verte ▶ située à gauche de la fonction de test pour n’exécuter que ce test.
+
+* Cliquez sur l’icône verte ▶ située à gauche de la classe pour exécuter tous les tests de cette classe.
+
+* Cliquez avec le bouton droit sur ``src/test/kotlin``, puis choisissez *Run Tests* pour exécuter tous les tests du projet.
+
+
 ## Plan de test
 
-Voici un exemple d'un plan de test que vous devrez inclure dans vos projet [ici](./plandetest.mdx).
+***Attention !*** Un test réussi ne prouve pas que le programme est entièrement exempt d’erreurs. 
+Il confirme seulement que, pour le scénario précis testé, le comportement obtenu correspond au comportement attendu.
+
+C’est pourquoi il faut identifier plusieurs scénarios : cas normal, cas limite, valeurs invalides, etc.
+
+Voici un exemple d'un [plan de test](./plandetest.mdx) que vous devrez inclure dans vos projets.

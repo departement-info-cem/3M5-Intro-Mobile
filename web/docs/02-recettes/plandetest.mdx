@@ -2,11 +2,51 @@
 hide_table_of_contents: true
 ---
 
-# Plan de test — Calculatrice
+# Plan de test
 
-## Objectif
+## Types de cas de test et couverture minimale
 
-Ce document présente le plan de test des fonctions `addition` et `division` du module `Calculatrice`. Pour chaque fonction, les cas normaux, limites et invalides sont identifiés avant l'écriture du code de test.
+Il est impossible de tester toutes les combinaisons d’entrées d’une fonction. Un plan de test doit donc identifier des cas représentatifs qui permettent de vérifier les comportements importants de la fonction.
+
+### Cas normal
+
+Un cas normal représente une utilisation **valide et habituelle** de la fonction. Les entrées respectent les règles prévues et permettent de vérifier le comportement principal attendu.
+
+**Exemple :** `addition(2, 3)` retourne `5`.
+
+### Cas limite
+
+Un cas limite se situe **à la frontière d’une règle**, d’une plage de valeurs ou d’un changement de comportement. Ces cas sont importants, car les erreurs de programmation surviennent fréquemment près des limites.
+
+**Exemples :**
+
+- `addition(0, 0)` vérifie le comportement avec la valeur neutre de l’addition.
+- `division(7, 2)` vérifie qu’une division entière retire correctement la partie décimale.
+- Pour une fonction qui accepte une note entre `0` et `100`, les valeurs `0` et `100` sont des cas limites.
+
+Lorsqu’une fonction accepte une plage numérique définie, il est souvent pertinent de tester **la valeur minimale**, **la valeur maximale**, ainsi que des valeurs immédiatement **avant ou après** ces limites.
+
+### Cas invalide
+
+Un cas invalide utilise une entrée qui **ne respecte pas** les règles de la fonction. Le test vérifie que la fonction réagit de la manière prévue : retourner une valeur particulière, lever une exception, refuser l’opération ou afficher un message d’erreur.
+
+**Exemple :** `division(10, 0)` est un cas invalide, car une division par zéro ne peut pas être effectuée. Dans notre programme, la fonction retourne `null`.
+
+### Couverture minimale attendue
+
+Pour chaque fonction, le plan de test doit inclure au **minimum** :
+
+- un cas normal pour chaque comportement principal.
+- quelques cas limites lorsqu’une limite, une valeur spéciale ou un changement de comportement existe.
+- un cas invalide **pour chaque type d’entrée invalide** que la fonction peut recevoir.
+
+L’objectif n’est pas d’atteindre un nombre arbitraire de tests, mais de couvrir tous les comportements identifiés dans le plan de test.
+Vous devriez avoir un test unitaire distinct **pour chaque ligne du plan de test**.
+
+
+## Exemple
+
+L'exemple qui suit présente le plan de test des fonctions `addition` et `division` du module `Calculatrice`. Pour chaque fonction, les cas normaux, limites et invalides sont identifiés avant l'écriture du code de test.
 
 ---
 
@@ -15,14 +55,15 @@ Ce document présente le plan de test des fonctions `addition` et `division` du 
 **Description :** Retourne la somme de deux entiers.
 
 **Entrées attendues :** deux entiers (`a`, `b`)
+
 **Sortie attendue :** un entier correspondant à `a + b`
 
 | # | Description du cas | Entrée(s) | Résultat attendu |
 |---|---|---|---|
 | 1 | Addition de deux nombres positifs | a=2, b=3 | 5 |
 | 2 | Addition avec un nombre négatif | a=-1, b=1 | 0 |
-| 3 | Addition de deux zéros (cas limite) | a=0, b=0 | 0 |
-| 4 | Addition de deux nombres négatifs | a=-4, b=-6 | -10 |
+| 3 | Addition de deux nombres négatifs | a=-4, b=-6 | -10 |
+| 4 | Addition de deux zéros (cas limite) | a=0, b=0 | 0 |
 
 ---
 
@@ -31,11 +72,13 @@ Ce document présente le plan de test des fonctions `addition` et `division` du 
 **Description :** Retourne le quotient entier de `a` par `b`, ou `null` si `b` vaut 0.
 
 **Entrées attendues :** deux entiers (`a`, `b`)
+
 **Sortie attendue :** un entier (division entière tronquée) ou `null`
 
 | # | Description du cas | Entrée(s) | Résultat attendu |
 |---|---|---|---|
 | 1 | Division normale | a=10, b=2 | 5 |
 | 2 | Division entière tronquée (cas limite) | a=7, b=2 | 3 |
-| 3 | Division par zéro (cas invalide) | a=10, b=0 | null |
+| 3 | Dividende égal à zéro (cas limite) | a=0, b=5 | 0 |
+| 4 | Division par zéro (cas invalide) | a=10, b=0 | null |
 
