@@ -1,4 +1,4 @@
-# 3N5 programmation 3
+# 3M5 Introduction à la programmation pour mobile
 
 Dans ce cours, nous allons changer de langage pour Kotlin:
 - nous allons t'accompagner dans l'apprentissage d'un nouveau langage (après C#)
