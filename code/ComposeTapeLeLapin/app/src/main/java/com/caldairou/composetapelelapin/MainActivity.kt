@@ -41,49 +41,51 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeTapeLeLapinTheme {
-                Scaffold(
-                    modifier = Modifier.fillMaxSize(),
-                    topBar = {
-                        TopAppBar(
-                            title = {Text(text = "Tape le lapin")},
-                            colors = TopAppBarDefaults.topAppBarColors(
-                                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                                titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
-                            )
-                        )
-                    }
-                ) { innerPadding ->
-                    EcranPrincipal(
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                    EcranPrincipal()
             }
         }
         println("Sortir de onCreate")
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun EcranPrincipal(modifier: Modifier = Modifier) {
+
     println("Entrée dans EcranPrincipal")
-    var nbPafs  by remember{mutableIntStateOf(0)}
-    var nbFlops by remember{mutableIntStateOf(0)}
-    Column(
-        modifier = modifier.fillMaxSize()
-    ){
-        AffichageScores(
-            nbPafs = nbPafs,
-            nbFlops = nbFlops,
-            modifier = Modifier.fillMaxWidth().weight(1f)
-        )
-        TitreApplication(
-            modifier = Modifier.fillMaxWidth().weight(1f)
-        )
-        GrilleTuiles(
-            incrementePafs = {nbPafs++},
-            incrementeFlops = {nbFlops++},
-            modifier = Modifier.fillMaxSize().weight(5f)
-        )
+    var nbPafs by remember { mutableIntStateOf(0) }
+    var nbFlops by remember { mutableIntStateOf(0) }
+
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        topBar = {
+            TopAppBar(
+                title = {Text(text = "Tape le lapin")},
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            )
+        }
+    ) { innerPadding ->
+
+        Column(
+            modifier = Modifier.padding(innerPadding).fillMaxSize()
+        ) {
+            AffichageScores(
+                nbPafs = nbPafs,
+                nbFlops = nbFlops,
+                modifier = Modifier.fillMaxWidth().weight(1f)
+            )
+            TitreApplication(
+                modifier = Modifier.fillMaxWidth().weight(1f)
+            )
+            GrilleTuiles(
+                incrementePafs = { nbPafs++ },
+                incrementeFlops = { nbFlops++ },
+                modifier = Modifier.fillMaxSize().weight(5f)
+            )
+        }
     }
     println("Sortir de EcranPrincipal")
 }
