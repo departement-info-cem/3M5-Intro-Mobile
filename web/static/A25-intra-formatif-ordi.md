@@ -2,7 +2,7 @@
 
 ## Utiliser une librairie
 
-1. **1 point** Créer un programme lisant la page web suivante : https://info.cegepmontpetit.ca/3N5-Prog3/testbot/courrielsDansA.html
+1. **1 point** Créer un programme lisant la page web suivante : https://info.cegepmontpetit.ca/3M5-Intro-Mobile/testbot/courrielsDansA.html
 2. Extraire l'ensemble des adresses courriels incluses dans une balise `<a>`. 
 3. **2 points** Afficher dans la console les informations sous la forme "Prénom nom a pour courriel prenom.nom@cegepmontpetit.ca" pour chaque élément trouvé
 
