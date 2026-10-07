@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "ca.cem.composenavigation"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "ca.cem.composenavigation"
