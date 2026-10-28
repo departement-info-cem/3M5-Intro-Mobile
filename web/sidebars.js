@@ -110,13 +110,13 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "11.1 - Structurer son code, service et packages",
-      id: "cours/10.2-structure-android",
+      label: "11.1 - La fonction Scaffold",
+      id: "cours/11.1-scaffold",
     },
     {
       type: "doc",
-      label: "11.2 - Tests",
-      id: "cours/12.2-tests",
+      label: "11.2 - Structurer son code, service et packages",
+      id: "cours/10.2-structure-android",
     },
     {
       type: "doc",
