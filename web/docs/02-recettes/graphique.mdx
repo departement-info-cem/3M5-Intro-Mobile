@@ -4,11 +4,12 @@ hide_table_of_contents: true
 
 # Graphique
 
-Il existe plusieurs librairies pour afficher des graphiques dans une application Android.
-Nous allons utiliser la librairie [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart), mais sachez qu'il existe plusieurs autres librairies qui offrent des fonctionnalités similaires.
+Il existe plusieurs librairies permettant d'afficher des graphiques dans une application *Android*.
 
-Le code de cette recette est disponible [ici](https://github.com/departement-info-cem/3N5-Prog3/tree/main/code/ComposeGraphique).
+Dans le cadre de ce cours, nous utiliserons la librairie [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart). Consultez le *README* du dépôt afin de connaître les étapes nécessaires à l'ajout des dépendances permettant d'intégrer cette librairie dans un projet *Android Studio*
 
-Il s'agit d'une combinaison de recettes précédentes:
-- La librairie qu'on utilise est uniquement disponible via JitPack.
-- MPAndroidChart fournit des objets graphiques classiques donc il faut utiliser AndroidView pour afficher dans Compose.
+Pour découvrir un exemple d'utilisation, référez-vous au projet [ComposeGraphique](https://github.com/departement-info-cem/3N5-Prog3/tree/main/code/ComposeGraphique).
+
+Cet exemple combine des notions abordées précédemment :
+- La librairie MPAndroidChart est distribuée via *JitPack*. Il faut donc configurer ce dépôt pour pouvoir l'utiliser dans le projet.
+- *MPAndroidChart* repose sur des composants graphiques classiques. Pour les intégrer à une interface *Jetpack Compose*, il faut utiliser *AndroidView*.
