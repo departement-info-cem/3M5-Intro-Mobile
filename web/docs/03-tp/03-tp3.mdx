@@ -16,9 +16,9 @@ Dans le TP2, les sujets n'existaient qu'en mémoire : fermer l'application les f
 
 Dans le TP3, tu vas :
 1.	 Sauvegarder les données (i.e. sujets et votes) dans une base de données *SQLite*, grâce à la librairie [SujetBD](https://info.cegepmontpetit.ca/3N5-TP3-Librairie-BD/index.html).
-2.	 Valider et effectuer du traitement de données à l'aide d'une classe de service.
+2.	 Valider et effectuer des opérations sur les données (ex: triage, calculs) à l'aide d'une classe de service.
 3.	 Tester les méthodes de la classe de service avec des tests unitaires.
-4.	 Ajouter un tiroir de navigation permettant aussi de supprimer les sujets et les votes.
+4.	 Ajouter un tiroir de navigation permettant aussi de supprimer tous les sujets et tous les votes.
 
 </Column>
 
@@ -96,7 +96,8 @@ Ton application sera maintenant découpée en trois couches et associée à une 
 
   <TabItem value="La classe de service" label="Étape 1 : La classe de service (1 point)">
 
-    C'est dans cette classe que vivent les règles de l'application (parfois appelées « logique applicative » ou « règles d'affaires »).
+    Le DAO permet d'accéder à la BD en lecture et écriture, mais n'effectue aucune validation sur les entrées de l'utilisateur...
+    Pour ce faire, nous utiliserons une classe de service. C'est dans cette classe que vivront les règles de l'application (parfois appelées « logique applicative » ou « règles d'affaires »).
 
     <Highlight color="tip">1 point</Highlight> Créer une classe de service en remplaçant ``Dupont`` par ton nom, à partir du modèle suivant:
 
