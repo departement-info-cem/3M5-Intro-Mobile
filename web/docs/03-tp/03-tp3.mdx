@@ -24,11 +24,11 @@ Dans le TP3, tu vas :
 
 <Column>
 
-## Git et suivi du code &#8203;<Highlight color="tip">2 points</Highlight>
+## Git et suivi du code
 
 Tu recevras un lien *GitHub Classroom* pour le TP3. Tu peux y copier ton TP2.
 
-- Minimum de **5 commits** de tailles comparables (pas un commit géant et des commits vides).
+- &#8203;<Highlight color="tip">2 points</Highlight> Minimum de **5 commits** de tailles comparables (pas un commit géant et des commits vides).
 
 - Messages de commit décrivant l'avancement, en français correct (passe Word).
 
@@ -227,92 +227,89 @@ Ton application sera maintenant découpée en trois couches et associée à une 
     ``testAjoutOk`` utilise ``listeSujets()``. Ce test ne passera qu'après avoir complété cette méthode à l'étape 4.
   :::
   </TabItem>
+
+  <TabItem value="Autres étapes" label="Étapes 3 à 7 : L'application finale">
+    <Row>
+    <Column>
+
+    ## Étape 3 : Ajout/Création d'un nouveau sujet
+
+    La méthode `ajouterSujet()` ainsi que ses tests sont fournis. Vous devez intégrer la création d'un sujet dans l'interface graphique.
+
+    - <Highlight color="tip">1 point</Highlight> Un sujet est créé dans l'écran de création en utilisant le contenu du champ texte.
+    - <Highlight color="tip">1 point</Highlight> Si la création échoue, un message indiquant la raison de l'erreur est affiché ("sujet vide", "sujet trop court", "sujet existant").
+
+    </Column>
+
+    <Column>
+
+    ## Étape 4 : Affichage de la liste des sujets
+
+    - <Highlight color="info">1 point</Highlight> Au niveau service, vous devez vous assurez de renvoyer la liste triée par nombre de votes, en ordre décroissant.
+    - <Highlight color="caution">1 point</Highlight> Vous devez écrire les tests pour cette méthode.
+    - <Highlight color="tip">2 points</Highlight> Vous devez intégrer la liste dans l'écran d'accueil de l'application.
+
+    </Column>
+
+    </Row>
+
+    <Row>
+
+    <Column>
+
+    ## Étape 5 : Ajout d'un vote
+
+    - <Highlight color="info">2 points</Highlight> Au niveau service, vous devez vous assurez qu'il n'y a pas de vote existant pour ce sujet et cette personne. Assurez-vous de lancer une exception significative si c'est le cas. Vous devez également vous assurer que le nom du votant fait au minimum 4 caractères imprimables (pas des espaces).
+    - <Highlight color="caution">1 point</Highlight> Vous devez écrire les tests pour cette méthode.
+    - <Highlight color="tip">1 point</Highlight> Vous devez intégrer l'ajout d'un vote dans l'écran correspondant de l'interface graphique. Si le vote est créé avec succès, l'application doit revenir à l'écran d'accueil.
+    - <Highlight color="tip">1 point</Highlight> Vous devez fournir un message significatif en cas d'erreur (déjà voté ou nom trop court ou vide).
+
+    </Column>
+
+    <Column>
+
+    ## Étape 6 : Écran de résultats
+
+    - <Highlight color="info">1 point</Highlight> Niveau service, vous devez programmer les différentes méthodes pour la moyenne et la distribution.
+    - <Highlight color="caution">2 points</Highlight> Vous devez écrire les tests pour ces méthodes.
+    - <Highlight color="tip">2 points</Highlight> Vous devez intégrer les appels dans l'écran de résultats.
+
+    </Column>
+    </Row>
+
+    <Row>
+    <Column>
+
+    ## Étape 7 : Tiroir de navigation
+
+    Vous devez implémenter un tiroir de navigation qui contient les options suivantes :
+
+    - <Highlight color="tip">1 point</Highlight> Navigation vers la page d'accueil "Accueil"
+    - <Highlight color="tip">1 point</Highlight> Navigation vers la page d'ajout d'un sujet "Ajouter un sujet"
+    - <Highlight color="tip">0,5 point</Highlight> Suppression de tous les votes "Suppr. les votes". On doit retourner à la liste des sujets si on y est pas déjà.
+    - <Highlight color="tip">0,5 point</Highlight> Suppression de toutes les sujets "Suppr. les sujets". On doit retourner à la liste des sujets si on y est pas déjà.
+
+    Autres éléments à considérer :
+
+    - <Highlight color="tip">1 point</Highlight> Le tiroir de navigation doit être disponible dans toutes les activités.
+    - <Highlight color="caution">1 point</Highlight> Vous devez écrire les tests pour vos méthodes de service (suppression sujets et votes).
+    - <Highlight color="tip">1 point</Highlight> L'interface doit se mettre à jour. L'ordre est mis à jour si on supprime les votes, la liste à l'écran est vidée si on supprime les sujets.
+
+    </Column>
+
+    <Column>
+
+    ## Fonctionnement global
+
+    &#8203;<Highlight color="danger">5 points négatifs</Highlight> Fonctionnement correct et sans plantage. Ce pointage fonctionne en négatif. Si l'application fonctionne correctement en tout temps, vous conservez votre note. Dans le cas contraire, vous perdez des points avec un maximum de 5.
+
+    - Plantage de l'application <Highlight color="danger">-1 point</Highlight>
+    - Interface illisible <Highlight color="danger">-1 point</Highlight>
+    - Information affichée incohérente <Highlight color="danger">-1 point</Highlight>
+    - Autres cas...
+
+    </Column>
+    </Row>
+
+  </TabItem>
 </Tabs>
-
----
-
-:::warning
-Assures-toi d'avoir complété les étapes 0, 1 et 2 avant de continuer !
-:::
-
-<Row>
-<Column>
-
-## Étape 3 : Ajout/Création d'un nouveau sujet
-
-La méthode `ajouterSujet()` ainsi que ses tests sont fournis. Vous devez intégrer la création d'un sujet dans l'interface graphique.
-
-- <Highlight color="tip">1 point</Highlight> Un sujet est créé dans l'écran de création en utilisant le contenu du champ texte.
-- <Highlight color="tip">1 point</Highlight> Si la création échoue, un message indiquant la raison de l'erreur est affiché ("sujet vide", "sujet trop court", "sujet existant").
-
-</Column>
-
-<Column>
-
-## Étape 4 : Affichage de la liste des sujets
-
-- <Highlight color="info">1 point</Highlight> Au niveau service, vous devez vous assurez de renvoyer la liste triée par nombre de votes, en ordre décroissant.
-- <Highlight color="caution">1 point</Highlight> Vous devez écrire les tests pour cette méthode.
-- <Highlight color="tip">2 points</Highlight> Vous devez intégrer la liste dans l'écran d'accueil de l'application.
-
-</Column>
-
-</Row>
-
-<Row>
-
-<Column>
-
-## Étape 5 : Ajout d'un vote
-
-- <Highlight color="info">2 points</Highlight> Au niveau service, vous devez vous assurez qu'il n'y a pas de vote existant pour ce sujet et cette personne. Assurez-vous de lancer une exception significative si c'est le cas. Vous devez également vous assurer que le nom du votant fait au minimum 4 caractères imprimables (pas des espaces).
-- <Highlight color="caution">1 point</Highlight> Vous devez écrire les tests pour cette méthode.
-- <Highlight color="tip">1 point</Highlight> Vous devez intégrer l'ajout d'un vote dans l'écran correspondant de l'interface graphique. Si le vote est créé avec succès, l'application doit revenir à l'écran d'accueil.
-- <Highlight color="tip">1 point</Highlight> Vous devez fournir un message significatif en cas d'erreur (déjà voté ou nom trop court ou vide).
-
-</Column>
-
-<Column>
-
-## Étape 6 : Écran de résultats
-
-- <Highlight color="info">1 point</Highlight> Niveau service, vous devez programmer les différentes méthodes pour la moyenne et la distribution.
-- <Highlight color="caution">2 points</Highlight> Vous devez écrire les tests pour ces méthodes.
-- <Highlight color="tip">2 points</Highlight> Vous devez intégrer les appels dans l'écran de résultats.
-
-</Column>
-</Row>
-
-<Row>
-<Column>
-
-## Étape 7 : Tiroir de navigation
-
-Vous devez implémenter un tiroir de navigation qui contient les options suivantes :
-
-- <Highlight color="tip">1 point</Highlight> Navigation vers la page d'accueil "Accueil"
-- <Highlight color="tip">1 point</Highlight> Navigation vers la page d'ajout d'un sujet "Ajouter un sujet"
-- <Highlight color="tip">0,5 point</Highlight> Suppression de tous les votes "Suppr. les votes". On doit retourner à la liste des sujets si on y est pas déjà.
-- <Highlight color="tip">0,5 point</Highlight> Suppression de toutes les sujets "Suppr. les sujets". On doit retourner à la liste des sujets si on y est pas déjà.
-
-Autres éléments à considérer :
-
-- <Highlight color="tip">1 point</Highlight> Le tiroir de navigation doit être disponible dans toutes les activités.
-- <Highlight color="caution">1 point</Highlight> Vous devez écrire les tests pour vos méthodes de service (suppression sujets et votes).
-- <Highlight color="tip">1 point</Highlight> L'interface doit se mettre à jour. L'ordre est mis à jour si on supprime les votes, la liste à l'écran est vidée si on supprime les sujets.
-
-</Column>
-
-<Column>
-
-## Fonctionnement global
-
-&#8203;<Highlight color="danger">5 points négatifs</Highlight> Fonctionnement correct et sans plantage. Ce pointage fonctionne en négatif. Si l'application fonctionne correctement en tout temps, vous conservez votre note. Dans le cas contraire, vous perdez des points avec un maximum de 5.
-
-- Plantage de l'application <Highlight color="danger">-1 point</Highlight>
-- Interface illisible <Highlight color="danger">-1 point</Highlight>
-- Information affichée incohérente <Highlight color="danger">-1 point</Highlight>
-- Autres cas...
-
-</Column>
-</Row>
