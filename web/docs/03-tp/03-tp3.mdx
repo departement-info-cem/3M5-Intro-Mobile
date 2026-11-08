@@ -79,7 +79,7 @@ Ton application sera maintenant découpée en trois couches et associée à une 
     // Envoie le sujet à la BD pour l'enregistrer (le DAO ne fait aucune vérification)
     dao.ajouterSujet(sujet)
 
-    // Lit tous les sujets de la BD et les affiche dans le **Logcat**
+    // Lit tous les sujets de la BD et les affiche dans le **Logcat**. Appliquez le filtre "system.out" dans le Logcat.
     println(dao.tousLesSujets())
     ```
 
