@@ -56,7 +56,7 @@ Ton application sera maintenant découpée en trois couches et associée à une 
     La librairie [**SujetBD**](https://info.cegepmontpetit.ca/3N5-TP3-Librairie-BD/) fournit :
 
     - Des classes représentant les sujets et les votes (`Sujet` et `Vote`);
-    - Une base de données SQLite `SujetVoteDataBase` construite avec [Room](https://developer.android.com/jetpack/androidx/releases/room) et un utilitaire `UtilitaireBD` permettant d'y accéder;
+    - Une base de données SQLite `SujetVoteDataBase` construite avec [Room](https://developer.android.com/jetpack/androidx/releases/room) et un utilitaire `UtilitaireBD` permettant de l'obtenir;
     - Un DAO (*Data Access Object*), `SujetVoteDAO`, qui fournit les méthodes d’accès direct aux données. Tu n'as pas à écrire de SQL, c'est Room qui s'en charge à partir de ces méthodes d’accès.
 
     Tu peux consulter la [recette JitPack](../02-recettes/ajout-librairie-jitpack.mdx) pour savoir comment [importer la librairie](https://jitpack.io/#departement-info-cem/3N5-TP3-Librairie-BD). Le [code source de la librairie](https://github.com/departement-info-cem/3N5-TP3-Librairie-BD) est également accessible pour les curieux !
