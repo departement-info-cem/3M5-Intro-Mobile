@@ -16,7 +16,7 @@ Dans le TP2, les sujets n'existaient qu'en mémoire : fermer l'application les f
 
 Dans le TP3, tu vas :
 1.	 Sauvegarder les données (i.e. sujets et votes) dans une base de données *SQLite*, grâce à la librairie [SujetBD](https://info.cegepmontpetit.ca/3N5-TP3-Librairie-BD/index.html).
-2.	 Valider et effectuer des opérations sur les données (ex: triage, calculs) à l'aide d'une classe de service.
+2.	 Valider et effectuer des opérations sur les données à l'aide d'une classe de service.
 3.	 Tester les méthodes de la classe de service avec des tests unitaires.
 4.	 Ajouter un tiroir de navigation permettant aussi de supprimer tous les sujets et tous les votes.
 
@@ -157,7 +157,7 @@ Ton application sera maintenant découpée en trois couches et associée à une 
     }
     ```
 
-    Remarque la structure de `ajouterSujet` : valider d'abord, écrire ensuite. Si une règle n'est pas respectée, une [exception](https://info.cegepmontpetit.ca/3M5-Intro-Mobile/cours/10.1-pile-appels-exceptions) est lancée et rien n'est écrit dans la BD. Les méthodes à compléter suivent le même principe.
+    Remarquez la structure de `ajouterSujet` : on commence par valider l'entrée de l'utilisateur, et on écrit dans la BD ensuite à l'aide du DAO. Si une règle n'est pas respectée, une [exception](https://info.cegepmontpetit.ca/3M5-Intro-Mobile/cours/10.1-pile-appels-exceptions) est lancée et rien n'est écrit dans la BD. La méthode `ajouterVote` suivra le même principe. La classe de service permet également d'effectuer des opérations sur les données obtenues de la BD. C'est ce que permettront notamment les méthodes `moyenneVotes` et `distributionVotes`. 
     
     Dans l'interface, tu pourras utiliser ton service en créant une instance de celle-ci :
 
