@@ -269,7 +269,7 @@ Ton application sera maintenant découpée en trois couches et associée à une 
 
     ## Étape 5 : Ajout d'un vote
 
-    - <Highlight color="info">2 points</Highlight> Au niveau service, vous devez vous assurez qu'il n'y a pas de vote existant pour ce sujet et cette personne. Assurez-vous de lancer une exception significative si c'est le cas. Vous devez également vous assurer que le nom du votant fait au minimum 4 caractères imprimables (pas des espaces).
+    - <Highlight color="info">2 points</Highlight> Au niveau service, vous devez vous assurez qu'il n'y a pas de vote existant pour ce sujet et ce votant (*personne ayant effectué le vote*). Quelle méthode du [DAO](https://info.cegepmontpetit.ca/3N5-TP3-Librairie-BD/-sujet-b-d/org.depinfo.sujetbd/-sujet-vote-d-a-o/index.html) peut vous être utile ici ? Assurez-vous de lancer une exception significative si le vote existe déjà. Vous devez également vous assurer que le nom du votant fasse au minimum 4 caractères imprimables (pas des espaces).
     - <Highlight color="caution">1 point</Highlight> Vous devez écrire les tests pour cette méthode.
     - <Highlight color="tip">1 point</Highlight> Vous devez intégrer l'ajout d'un vote dans l'écran correspondant de l'interface graphique. Si le vote est créé avec succès, l'application doit revenir à l'écran d'accueil.
     - <Highlight color="tip">1 point</Highlight> Vous devez fournir un message significatif en cas d'erreur (déjà voté ou nom trop court ou vide).
