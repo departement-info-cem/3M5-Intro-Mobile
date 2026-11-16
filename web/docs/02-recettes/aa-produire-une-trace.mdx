@@ -151,6 +151,44 @@ On veut accomplir 2 éléments principaux :
 
     </TabItem>
 
+    <TabItem value="avec-une-lambda" label="Avec une fonction lambda">
+    <Row>
+    <Column>
+    ### Code
+    ```kotlin showLineNumbers
+        fun appliquer(n: Int, operation: (Int) -> Int): Int {
+            val resultat = operation(n)
+            return resultat + 1
+        }
+
+        fun main() {
+            val a = 4
+            val b = appliquer(a) { x ->
+            x * 3
+        }
+        println(b)
+    }
+    ```
+    </Column>
+    <Column>
+
+    ### Trace
+    | ligne exécutée | effet | pile d'appels |
+    |---|---|---|
+    | `val a = 4` | a = 4 | **main** |
+    | `val b = appliquer(a) { x ->` | appelle appliquer avec 4→n et ` { x -> x*3 } ` → operation | **main** |
+    | `val resultat = operation(n)` | appelle la lambda avec 4→x | **appliquer**<br />main |
+    | `x * 3` | retourne 12 | **lambda**<br />appliquer<br />main |
+    | `val resultat = operation(n)` | resultat = 12 | **appliquer**<br />main |
+    | `return resultat + 1` | retourne 13 | **appliquer**<br />main |
+    | `val b = appliquer(a) { x ->` | b = 13 | **main** |
+    | `println(b)` | affiche 13 | **main** |
+
+    </Column>
+    </Row>
+
+    </TabItem>
+
     <TabItem value="valider-une-trace" label="Valider une trace">
 
         Afin de valider ta trace, tu vas utiliser le débogueur de ton IDE préféré.
