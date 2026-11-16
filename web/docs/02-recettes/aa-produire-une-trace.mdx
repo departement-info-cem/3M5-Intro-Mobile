@@ -175,14 +175,14 @@ On veut accomplir 2 éléments principaux :
     ### Trace
     | ligne exécutée | effet | pile d'appels |
     |---|---|---|
-    | `val a = 4` | a = 4 | **main** |
-    | `val b = appliquer(a) { x ->` | appelle appliquer avec 4→n et ` { x -> x*3 } ` → operation | **main** |
-    | `val resultat = operation(n)` | appelle la lambda avec 4→x | **appliquer**<br />main |
-    | `x * 3` | retourne 12 | **lambda**<br />appliquer<br />main |
-    | `val resultat = operation(n)` | resultat = 12 | **appliquer**<br />main |
-    | `return resultat + 1` | retourne 13 | **appliquer**<br />main |
-    | `val b = appliquer(a) { x ->` | b = 13 | **main** |
-    | `println(b)` | affiche 13 | **main** |
+    | `val a = 4` | a : 4 | **main** |
+    | `val b = appliquer(a) { x ->` | a : 4 <br /> appelle appliquer avec 4→n et ` { x -> x*3 } ` → operation | **main** |
+    | `val resultat = operation(n)` | n : 4 <br /> operation : ` { x -> x*3 } ` <br /> appelle la lambda operation avec 4→x | **appliquer**<br />main |
+    | `x * 3` | a : 4 <br /> retourne 12 | **lambda**<br />appliquer<br />main |
+    | `val resultat = operation(n)` | n : 4 <br /> operation : ` { x -> x*3 } ` <br /> resultat : 12 | **appliquer**<br />main |
+    | `return resultat + 1` | n : 4 <br /> operation : ` { x -> x*3 } ` <br /> resultat : 13 <br /> retourne 13 | **appliquer**<br />main |
+    | `val b = appliquer(a) { x ->` | a : 4 <br /> b : 13 | **main** |
+    | `println(b)` | a : 4 <br /> b : 13 <br /> affiche "13" | **main** |
 
     </Column>
     </Row>
