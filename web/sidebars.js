@@ -145,18 +145,19 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "14.2 - Intégration / correction TP3",
+      label: "14.2 - Formatif théorique / Intégration / correction TP3",
       id: "cours/14.1-integration-3",
       className: "remise-tp3",
     },
     {
       type: "doc",
-      label: "15.1 - Formatif final",
+      label: "15.1 - Examen théorique (15%) / Formatif final",
       id: "cours/15.1-formatif-final",
+      className: "examen"
     },
     {
       type: "doc",
-      label: "15.2 - Examen théorique (15%) / Examen pratique (20%)",
+      label: "15.2 - Examen pratique (20%)",
       id: "cours/15.2-examen-final",
       className: "examen",
     },
